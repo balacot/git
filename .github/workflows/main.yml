@@ -1,0 +1,14 @@
+name: Hola Mundo Workflow
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build Docker Image
+      run: docker build -t hola-mundo .
+    - name: Run Docker Image
+      run: docker run hola-mundo
